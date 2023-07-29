@@ -1,0 +1,36 @@
+<!-- ./views/index.handlebars -->
+<div class="container mt-5">
+  <!-- search bar -->
+  <div class="row" id="search-bar">
+    <div class="col-12">
+      <form action="/articles/search">
+        <div class="input-group mb-3">
+          <input type="text" name="keyword" class="form-control" placeholder="請填入電影名稱進行搜尋..." value="{{searchKeyword}}"
+            aria-describedby="search-button">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit" id="search-button">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- article list -->
+  <div class="row" id="data-panel">
+
+    {{#each articles}}
+    <div class="col-sm-3 mb-3">
+      <a href="/articles/introduce/{{ this.id }}" class="text-secondary">
+        <div class="card">
+          <img class=" card-img-top mb-2" src="{{ this.image }}"
+            alt="Card image cap" style="height:300px">
+          <div class=" card-body movie-item-body" style="min-height:100px">
+            <h6 class="card-title">{{ this.title }}</h6>
+          </div>
+        </div>
+      </a>
+    </div>
+    {{/each}}
+
+  </div>
+</div>
