@@ -29,6 +29,7 @@ app.use('/movies', movieRouter)
 
 
 app.listen(process.env.PORT || 8088, function(req , res ){
-    console.log('server is running...'); 
+    console.log('server is running...');
+    console.log('http://localhost:8088/articles'); 
     // console.log(process.env.PORT);
 })
